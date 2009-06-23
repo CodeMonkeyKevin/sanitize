@@ -141,7 +141,7 @@ class Sanitize
     # as entities. This eliminates certain types of maliciously-malformed nested
     # tags.
     fragment.search('*') do |node|
-      node.swap(Sanitize.encode_html(node.to_original_html)) if node.text?
+      node.swap(Sanitize.encode_html(node.to_original_html, @config)) if node.text?
     end
 
     result = fragment.to_s
@@ -169,9 +169,9 @@ class Sanitize
 
     # Encodes special HTML characters (<, >, ", ', and &) in _html_ as entity
     # references and returns the encoded string.
-    def encode_html(html)
+    def encode_html(html, config = {})
+      return html unless config[:replace_entities]
       str = html.dup
-
       # Encode special chars.
       ENTITY_MAP.each {|char, entity| str.gsub!(char, entity) }
 
