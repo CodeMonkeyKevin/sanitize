@@ -135,6 +135,9 @@ include the symbol <code>:relative</code> in the protocol array:
     'a' => {'href' => ['http', 'https', :relative]}
   }
 
+Disable replacement of replace_entities (default is true)
+
+  :replace_entities => false
 
 == Contributors
 

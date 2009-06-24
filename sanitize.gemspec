@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.version  = '1.0.8.2'
   s.author   = 'Ryan Grove'
   s.email    = 'ryan@wonko.com'
-  s.homepage = 'http://github.com/rgrove/sanitize/'
+  s.homepage = 'http://github.com/KevinPatel/sanitize'
   s.platform = Gem::Platform::RUBY
 
   s.require_path          = 'lib'
